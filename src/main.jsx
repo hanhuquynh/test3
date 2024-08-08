@@ -9,30 +9,25 @@ import About from "./features/share/About";
 import Contact from "./features/share/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      errorElement: <ErrorPage />,
-      children: [
-        { index: true, element: <Home /> },
-
-        {
-          path: "about",
-          element: <About />,
-        },
-        {
-          path: "contact",
-          element: <Contact />,
-        },
-      ],
-    },
-  ],
+const router = createBrowserRouter([
   {
-    basename: import.meta.env.VITE_BASE_URL,
-  }
-);
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Home /> },
+
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
